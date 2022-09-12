@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400;1,700&display=swap');
+
+body {
+    background: #050505;
+    width: 100%;
+}
+
+nav {
+    background: #dbdbdb;
+    display: flex;
+}
+
+.imagenLogo {
+    width: 80px;
+    margin-left: 30px;
+}
+
+.menu {
+    padding-left: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul {
+    display: inline-block;
+    padding: 20px;
+    justify-content: end;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.titulo {
+    color: #ffffff;
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 30px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.card {
+    position: relative;
+    padding: 5px 5px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px rgb(66, 66, 66);
+
+}
+
+.card p {
+    font-family: "Ubuntu", sans-serif;
+    
+}
+
+.card div img{
+    max-width: 100%;
+}
+
+.imagenProducto {
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+p {
+    color: #0a0a0a;
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+    font-family: Lato-Black;
+    padding: 10px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.btnAgregar {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 25px;
+    border: 2px solid #9e9e9e;
+    background: #E9EEF2;
+    color: #393a3a;
+    font-family: "Ubuntu", sans-serif;
+    transition: .5s ease;
+}
+
+.btnAgregar:hover {
+    background: #1aff00;
+    color: #353535;
+}
+
+.btnAgregar:active {
+    background: #1d5500;
+}
+
+
+.cart {
+    position: absolute;
+    right: 35px;
+    top: 25px;
+    text-decoration: none;
+}
+
+.iconoCarrito {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.cartContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contadorCarrito {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
