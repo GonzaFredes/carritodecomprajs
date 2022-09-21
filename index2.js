@@ -22,7 +22,7 @@ botonVaciar.addEventListener ('click', () => {
     carrito.length = 0
     actualizarCarrito()
 })
-
+//se definen la lista de productos mediante variable con array
 let stockProductos= [
     {id:1,nombre:'Jordan Air Retro 11 Low ',precio: 71000,imagen: './images/524979-150-auto.jfif',cantidad:1},
     {id:2,nombre:'Jordan Air XXXV',precio: 32000,imagen: './images/588541-150-auto.jfif',cantidad:1},
@@ -33,7 +33,7 @@ let stockProductos= [
     {id:7,nombre:'Adidas Originals MD G-B',precio: 42000,imagen: './images/607179-150-auto.jfif',cantidad:1},
     {id:8,nombre:'Adidas Originals Multix',precio: 29000,imagen: './images/437270-150-auto.jfif',cantidad:1},
 ]
-
+//para cada producto genera un div en el HTML donde se le agregan las caracteristicas de la variable definida anteriormente
 stockProductos.forEach ((producto) => {
     const div = document.createElement ('div')
     div.classList.add ('producto')
@@ -74,14 +74,14 @@ const agregarAlCarrito = (prodId) => {
 }
 actualizarCarrito ()
 }                 
-
+//variable para eliminar producto del carrito
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
     carrito.splice(indice,1)
     actualizarCarrito()
 }    
-
+//variable con funcion creada para que se agregue al carrito cada producto con sus caracteristicas traídas del array
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = ""
 
@@ -93,9 +93,9 @@ const actualizarCarrito = () => {
         <p>Precio: ${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
         <img class='imagencarrito' src=${prod.imagen} alt="foto del producto"/>
-        <button onclick = "eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></button>
+        <button onclick = "eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fa-solid fa-trash-can"></i></button>
         `
-
+        //Implementación de Json para guardar los items elegidos en carrito
         contenedorCarrito.appendChild(div)
         localStorage.setItem('carrito', JSON.stringify(carrito))
     })
@@ -103,6 +103,7 @@ const actualizarCarrito = () => {
     precioTotal.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio,0);
 }
 
+//Escuchadores de eventos para modal de carrito
 botonAbrir.addEventListener('click', ()=>{
     contenedorModal.classList.toggle('modal-active')
 })
