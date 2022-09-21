@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 botonVaciar.addEventListener ('click', () => {
     carrito.length = 0
+    localStorage.removeItem('carrito')
     actualizarCarrito()
 })
 //se definen la lista de productos mediante variable con array
@@ -80,6 +81,7 @@ const eliminarDelCarrito = (prodId) => {
     const indice = carrito.indexOf(item)
     carrito.splice(indice,1)
     actualizarCarrito()
+    
 }    
 //variable con funcion creada para que se agregue al carrito cada producto con sus caracteristicas traídas del array
 const actualizarCarrito = () => {
@@ -99,10 +101,15 @@ const actualizarCarrito = () => {
         contenedorCarrito.appendChild(div)
         localStorage.setItem('carrito', JSON.stringify(carrito))
     })
-    contadorCarrito.innerText = carrito.length
+    let contadorTotal = 0;
+    carrito.forEach(num => {
+        contadorTotal = num.cantidad + contadorTotal;
+        return contadorTotal;
+    })
+
+    contadorCarrito.innerText = contadorTotal
     precioTotal.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio,0);
 }
-
 //Escuchadores de eventos para modal de carrito
 botonAbrir.addEventListener('click', ()=>{
     contenedorModal.classList.toggle('modal-active')
