@@ -345,8 +345,13 @@ p {
     }
   }
   #enviar {
-    display:flex ;
+    padding: 15px;
+  }
+
+  .submitEnviar {
+    display: flex;
     text-align: center;
-    align-items: center;
+    justify-content: center;
+    padding: 5px;
   }
   

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <script src="https://kit.fontawesome.com/48689d6c92.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Pragon Store - Tienda Online</title>
 </head>
 
@@ -15,17 +15,13 @@
         <div>
             <img class="imagenLogo" src="/images/logo.png" alt="Logo del sitio">
         </div>
-        <div class="botonCarro">
-            <button id="boton-carrito"><i></i><i class="fas fa-shopping-cart"></i><span
-                    id="contadorCarrito">0</span></button>
-        </div>
     </nav>
     <div>
         <h1 class="titulo">Finalizar Compra</h1>
     </div>
     <form action="" class="formulario" id="enviar-email">
         <fieldset>
-            <legend>Tus datos</legend>
+            <legend>Ingresa tus datos para recibir el pedido</legend>
             <div class="campo">
                 <label for="nombre">Nombre</label>
                 <input id="nombre" type="text" placeholder="Nombre">
@@ -46,7 +42,6 @@
             </div>
         </fieldset>
         <fieldset>
-            <legend>Pais</legend>
             <div class="campo">
                 <label for="pais" id="pais">Pais</label>
                 <select>
@@ -65,9 +60,11 @@
                 </select>
             </div>
         </fieldset>
-        <input type="submit" class="btn" id="enviar" value="Enviar formulario">
+        <div class="submitEnviar">
+            <input type="submit" class="btn" id="enviar" value="ENVIAR">
+        </div>
     </form>
-    <script src="./index.js"></script>
+    <script src="../form.js"></script>
 </body>
 
 </html>
