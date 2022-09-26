@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/48689d6c92.js" crossorigin="anonymous"></script>
+    <title>Pragon Store - Tienda Online</title>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <img class="imagenLogo" src="/images/logo.png" alt="Logo del sitio">
+        </div>
+        <div class="botonCarro">
+            <button id="boton-carrito"><i></i><i class="fas fa-shopping-cart"></i><span
+                    id="contadorCarrito">0</span></button>
+        </div>
+    </nav>
+    <div>
+        <h1 class="titulo">Finalizar Compra</h1>
+    </div>
+    <form action="" class="formulario" id="enviar-email">
+        <fieldset>
+            <legend>Tus datos</legend>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" placeholder="Nombre">
+            </div>
+
+            <div class="campo">
+                <label for="apellido">Apellido</label>
+                <input id="apellido" type="text" placeholder="Apellido">
+            </div>
+
+            <div class="campo">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Tu email">
+            </div>
+            <div class="campo">
+                <label for="tel">Telefono</label>
+                <input id="tel" type="tel" placeholder="Tu telefono">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Pais</legend>
+            <div class="campo">
+                <label for="pais" id="pais">Pais</label>
+                <select>
+                    <option>
+                        Uruguay
+                    </option>
+                    <option>
+                        Argentina
+                    </option>
+                    <option>
+                        Paraguay
+                    </option>
+                    <option>
+                        Otro
+                    </option>
+                </select>
+            </div>
+        </fieldset>
+        <input type="submit" class="btn" id="enviar" value="Enviar formulario">
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -255,7 +255,19 @@ p {
     width: 15%;
 }
 
+.botonera {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
 #vaciar-carrito {
+    align-content: center;
+    padding: 10px;
+    background-color: rgb(114, 114, 114);
+    border-radius: 10px;
+}
+#finalizar-compra {
     align-content: center;
     padding: 10px;
     background-color: rgb(114, 114, 114);
@@ -272,3 +284,69 @@ p {
     width: 50px;
     height: 40px;
 }
+
+/*Finalizar Compra*/
+.formulario {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .formulario fieldset {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 768px) {
+    .formulario fieldset {
+      padding: 2rem;
+      background: #dbdbdb;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #050505;
+    }
+  }
+  .formulario legend {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    margin-bottom: 4rem;
+  }
+  .formulario .campo {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  .formulario .campo label {
+    flex-basis: 10rem;
+    color: #fff;
+    margin-left: 3rem;
+  }
+  @media (max-width: 768px) {
+    .formulario .campo label {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    .formulario #email {
+      margin-left: 3rem;
+    }
+  }
+  .formulario .campo input:not([type=radio]),
+  .formulario textarea,
+  .formulario select {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 768px) {
+    .formulario input, .formulario #date {
+      width: 90%;
+      padding-left: 2rem;
+    }
+  }
+  #enviar {
+    display:flex ;
+    text-align: center;
+    align-items: center;
+  }
+  
