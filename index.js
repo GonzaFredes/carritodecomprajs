@@ -11,6 +11,10 @@ const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
 
 let carrito = []
 
+let stockProductos = []
+const botonZapatillas = document.getElementById ('botonZapatillas')
+const botonPantalones = document.getElementById ('botonPantalones')
+
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'))
@@ -28,53 +32,93 @@ botonVaciar.onclick = mostrarAlert
 function mostrarAlert() {
     swal("Artículos Eliminados", "Puedes seguir agregando productos al carrito", "success");
 }
-//se definen la lista de productos mediante variable con array
-let stockProductos = [
-    { id: 1, nombre: 'Jordan Air Retro 11 Low ', precio: 71000, imagen: './images/524979-150-auto.jfif', cantidad: 1 },
-    { id: 2, nombre: 'Jordan Air XXXV', precio: 32000, imagen: './images/588541-150-auto.jfif', cantidad: 1 },
-    { id: 3, nombre: 'Jordan Air 1 Mid', precio: 47000, imagen: './images/424881-150-auto.jfif', cantidad: 1 },
-    { id: 4, nombre: 'Nike Air Force 1 GTX', precio: 38000, imagen: './images/417890-150-auto.jfif', cantidad: 1 },
-    { id: 5, nombre: 'Adidas Originals MD Black', precio: 42000, imagen: './images/461204-150-auto.jfif', cantidad: 1 },
-    { id: 6, nombre: 'Adidas Originals MD Grey', precio: 42000, imagen: './images/574599-150-auto.jfif', cantidad: 1 },
-    { id: 7, nombre: 'Adidas Originals MD G-B', precio: 42000, imagen: './images/607179-150-auto.jfif', cantidad: 1 },
-    { id: 8, nombre: 'Adidas Originals Multix', precio: 29000, imagen: './images/437270-150-auto.jfif', cantidad: 1 },
-]
-//para cada producto genera un div en el HTML donde se le agregan las caracteristicas de la variable definida anteriormente
-stockProductos.forEach((producto) => {
-    const div = document.createElement('div')
-    div.classList.add('producto')
-    div.innerHTML = `
-    <div class="card">
-        <p>${producto.nombre}</p>
-        <div>
-            <img class='imagenProducto' src=${producto.imagen} alt="foto del producto"/>
-        </div>
-        <div>
-            <p>$${producto.precio}</p>
-        </div>
-        <div class="btn-container">
-            <button id=${producto.id} class='btnAgregar'>AÑADIR AL CARRITO</button>
-        </div>
-    </div>`
-    contenedorProductos.appendChild(div)
-    const boton = document.getElementById(`${producto.id}`)
-    boton.addEventListener('click', () => {
-        agregarAlCarrito(producto.id)
+
+//fetch apuntado al archivo .json de stock de productos
+botonZapatillas.onclick = async () => {
+    const stock = await fetch('./zapatillas.json')
+    const stockJson = await stock.json()
+    await stockJson.forEach(e => {
+        stockProductos.push(e);
+    })//para cada producto genera un div en el HTML donde se le agregan las caracteristicas de la variable definida anteriormente
+    stockJson.forEach((producto) => {
+        const div = document.createElement('div')
+        div.classList.add('producto')
+        div.innerHTML = `
+        <div class="card">
+            <p>${producto.nombre}</p>
+            <div>
+                <img class='imagenProducto' src=${producto.imagen} alt="foto del producto"/>
+            </div>
+            <div>
+                <p>$${producto.precio}</p>
+            </div>
+            <div class="btn-container">
+                <button id=${producto.id} class='btnAgregar'>AÑADIR AL CARRITO</button>
+            </div>
+        </div>`
+        contenedorProductos.appendChild(div)
+        const boton = document.getElementById(`${producto.id}`)
+        boton.addEventListener('click', () => {
+            agregarAlCarrito(producto.id)
+        })
+        boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
+        function mostrarAgregado() {
+            Toastify({
+                text: `Agregaste un nuevo producto al carrito`,
+                className: "info",
+                position: "right",
+                gravity: "bottom",
+                style: {
+                    background: "#dbdbdb",
+                    color: "#050505",
+                }
+            }).showToast();
+        }
     })
-    boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
-    function mostrarAgregado() {
-        Toastify({
-            text: `Agregaste un nuevo producto al carrito`,
-            className: "info",
-            position: "right",
-            gravity: "bottom",
-            style: {
-                background: "#dbdbdb",
-                color: "#050505",
-            }
-        }).showToast();
-    }
-})
+}
+
+botonPantalones.onclick = async () => {
+    const stock = await fetch('./pantalones.json')
+    const stockJson = await stock.json()
+    await stockJson.forEach(e => {
+        stockProductos.push(e);
+    })
+    stockJson.forEach((producto) => {
+        const div = document.createElement('div')
+        div.classList.add('producto')
+        div.innerHTML = `
+        <div class="card">
+            <p>${producto.nombre}</p>
+            <div>
+                <img class='imagenProducto' src=${producto.imagen} alt="foto del producto"/>
+            </div>
+            <div>
+                <p>$${producto.precio}</p>
+            </div>
+            <div class="btn-container">
+                <button id=${producto.id} class='btnAgregar'>AÑADIR AL CARRITO</button>
+            </div>
+        </div>`
+        contenedorProductos.appendChild(div)
+        const boton = document.getElementById(`${producto.id}`)
+        boton.addEventListener('click', () => {
+            agregarAlCarrito(producto.id)
+        })
+        boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
+        function mostrarAgregado() {
+            Toastify({
+                text: `Agregaste un nuevo producto al carrito`,
+                className: "info",
+                position: "right",
+                gravity: "bottom",
+                style: {
+                    background: "#dbdbdb",
+                    color: "#050505",
+                }
+            }).showToast();
+        }
+    })
+}
 
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some(prod => prod.id === prodId)

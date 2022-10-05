@@ -252,7 +252,8 @@ p {
 }
 
 .imagencarrito {
-    width: 15%;
+    width: 100px;
+    height: 100px;
 }
 
 .botonera {
@@ -284,6 +285,27 @@ p {
     width: 50px;
     height: 40px;
 }
+
+.botonera {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
+}
+
+.botonera p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #dbdbdb;
+}
+
+#botonZapatillas, #botonPantalones {
+    padding: 8px;
+    justify-content: center;
+}
+
 
 /*Finalizar Compra*/
 .formulario {

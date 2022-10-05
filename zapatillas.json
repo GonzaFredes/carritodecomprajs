@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "nombre": "Jordan Air Retro 11 Low",
+        "precio": 71000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/432335-800-auto?v=637577161140070000&width=800&height=auto&aspect=true",
+        "cantidad": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Jordan Air XXXV",
+        "precio": 32000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/597057/316-0458_1.jpg?v=637949562647900000",
+        "cantidad": 1
+    },
+    {
+        "id": 3,
+        "nombre": "Jordan Air 1 Mid",
+        "precio": 47000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/586768/316-0430_1.jpg?v=637932200064570000",
+        "cantidad": 1
+    },
+    {
+        "id": 4,
+        "nombre": "Nike Air Force 1 GTX",
+        "precio": 38000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/417507/306-9775_1.jpg?v=637538501107970000",
+        "cantidad": 1
+    },
+    {
+        "id": 5,
+        "nombre": "Adidas Originals MD Black",
+        "precio": 42000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/461203/261-2624_1.jpg?v=637650813161900000",
+        "cantidad": 1
+    },
+    {
+        "id": 6,
+        "nombre": "Adidas Originals MD Grey",
+        "precio": 42000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/621946/261-3640_1.jpg?v=637988643316430000",
+        "cantidad": 1
+    },
+    {
+        "id": 7,
+        "nombre": "Adidas Originals MD G-B",
+        "precio": 42000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/606921/261-3603_1.jpg?v=637963393766070000",
+        "cantidad": 1
+    },
+    {
+        "id": 8,
+        "nombre": "Adidas Originals Multix",
+        "precio": 29000,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/608414/261-3607_1.jpg?v=637964157879430000",
+        "cantidad": 1
+    }
+]
