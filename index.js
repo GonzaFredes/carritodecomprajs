@@ -14,6 +14,7 @@ let carrito = []
 let stockProductos = []
 const botonZapatillas = document.getElementById ('botonZapatillas')
 const botonPantalones = document.getElementById ('botonPantalones')
+const botonTodos = document.getElementById ('botonTodos')
 
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')) {
@@ -64,7 +65,7 @@ botonZapatillas.onclick = async () => {
         boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
         function mostrarAgregado() {
             Toastify({
-                text: `Agregaste un nuevo producto al carrito`,
+                text: `Agregaste un nuevo producto al carrito`+` (${producto.nombre})`,
                 className: "info",
                 position: "right",
                 gravity: "bottom",
@@ -107,7 +108,56 @@ botonPantalones.onclick = async () => {
         boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
         function mostrarAgregado() {
             Toastify({
-                text: `Agregaste un nuevo producto al carrito`,
+                text: `Agregaste un nuevo producto al carrito`+` (${producto.nombre})`,
+                className: "info",
+                position: "right",
+                gravity: "bottom",
+                style: {
+                    background: "#dbdbdb",
+                    color: "#050505",
+                }
+            }).showToast();
+        }
+    })
+}
+
+botonTodos.onclick = async () => {
+    const stockPantalones = await fetch('./pantalones.json')
+    const stockPantalonesJson = await stockPantalones.json()
+    await stockPantalonesJson.forEach(e => {
+        stockProductos.push(e);
+    })
+    const stockZapatillas = await fetch('./zapatillas.json')
+    const stockZapatillasJson = await stockZapatillas.json()
+    await stockZapatillasJson.forEach(e => {
+        stockProductos.push(e);
+    })
+    const productosTodos = stockPantalonesJson.concat(stockZapatillasJson)
+    productosTodos.forEach((producto) => {
+        const div = document.createElement('div')
+        div.classList.add('producto')
+        div.innerHTML = `
+        <div class="card">
+            <p>${producto.nombre}</p>
+            <div>
+                <img class='imagenProducto' src=${producto.imagen} alt="foto del producto"/>
+            </div>
+            <div>
+                <p>$${producto.precio}</p>
+            </div>
+            <div class="btn-container">
+                <button id=${producto.id} class='btnAgregar'>AÑADIR AL CARRITO</button>
+            </div>
+        </div>`
+        contenedorProductos.appendChild(div)
+        const boton = document.getElementById(`${producto.id}`)
+        boton.addEventListener('click', () => {
+            agregarAlCarrito(producto.id)
+        })
+        boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
+        function mostrarAgregado() {
+            Toastify({
+                text: `Agregaste un nuevo producto al carrito`+` (${producto.nombre})`,
                 className: "info",
                 position: "right",
                 gravity: "bottom",
