@@ -40,9 +40,10 @@ botonZapatillas.onclick = async () => {
     const stockJson = await stock.json()
     await stockJson.forEach(e => {
         stockProductos.push(e);
-    })//para cada producto genera un div en el HTML donde se le agregan las caracteristicas de la variable definida anteriormente
+    })
+    document.getElementById('contenedor-productos').innerHTML = "";//limpia el div que contiene las cards para mostrar las de la categoría que se selecciona
     stockJson.forEach((producto) => {
-        const div = document.createElement('div')
+        const div = document.createElement('div')//para cada producto genera un div en el HTML donde se le agregan las caracteristicas de la variable definida anteriormente
         div.classList.add('producto')
         div.innerHTML = `
         <div class="card">
@@ -84,6 +85,7 @@ botonPantalones.onclick = async () => {
     await stockJson.forEach(e => {
         stockProductos.push(e);
     })
+    document.getElementById('contenedor-productos').innerHTML = "";
     stockJson.forEach((producto) => {
         const div = document.createElement('div')
         div.classList.add('producto')
@@ -105,7 +107,7 @@ botonPantalones.onclick = async () => {
         boton.addEventListener('click', () => {
             agregarAlCarrito(producto.id)
         })
-        boton.onclick = mostrarAgregado //funcion que muestra alertas cada vez que se agrega un producto al carrito mediante Toastify
+        boton.onclick = mostrarAgregado
         function mostrarAgregado() {
             Toastify({
                 text: `Agregaste un nuevo producto al carrito`+` (${producto.nombre})`,
@@ -132,7 +134,8 @@ botonTodos.onclick = async () => {
     await stockZapatillasJson.forEach(e => {
         stockProductos.push(e);
     })
-    const productosTodos = stockPantalonesJson.concat(stockZapatillasJson)
+    const productosTodos = stockPantalonesJson.concat(stockZapatillasJson) //concatenado de APIs para mostrar todos los productos juntos
+    document.getElementById('contenedor-productos').innerHTML = ""; 
     productosTodos.forEach((producto) => {
         const div = document.createElement('div')
         div.classList.add('producto')
@@ -166,7 +169,7 @@ botonTodos.onclick = async () => {
                     color: "#050505",
                 }
             }).showToast();
-        }
+        } 
     })
 }
 
@@ -203,9 +206,9 @@ const actualizarCarrito = () => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
-        <p>${prod.nombre}</p>
-        <p>Precio: ${prod.precio}</p>
-        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <p class="nombre-producto">${prod.nombre}</p>
+        <p class="nombre-producto">Precio: ${prod.precio}</p>
+        <p class="nombre-producto">Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
         <img class='imagencarrito' src=${prod.imagen} alt="foto del producto"/>
         <button onclick = "eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fa-solid fa-trash-can"></i></button>
         `

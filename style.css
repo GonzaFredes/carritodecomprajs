@@ -192,6 +192,10 @@ p {
     scroll-behavior: auto;
 }
 
+.modal-carrito h3 {
+    font-family: "Ubuntu", sans-serif;
+}
+
 .modal-active .modal-carrito {
     margin-top: 0;
 }
@@ -218,6 +222,7 @@ p {
 }
 .modal-carrito .precioProducto {
     padding-top: 10px;
+    font-family: "Ubuntu", sans-serif;
 }
 
 .productoEnCarrito {
@@ -256,6 +261,9 @@ p {
     height: 100px;
 }
 
+.fondoPragon {
+    width: 30%;
+}
 .botonera {
     display: flex;
     text-align: center;
@@ -267,12 +275,14 @@ p {
     padding: 10px;
     background-color: rgb(114, 114, 114);
     border-radius: 10px;
+    font-family: "Ubuntu", sans-serif;
 }
 #finalizar-compra {
     align-content: center;
     padding: 10px;
     background-color: rgb(114, 114, 114);
     border-radius: 10px;
+    font-family: "Ubuntu", sans-serif;
 }
 
 .botonCarro {
@@ -301,11 +311,16 @@ p {
     color: #dbdbdb;
 }
 
-#botonZapatillas, #botonPantalones, #botonTodos{
+#botonZapatillas, #botonPantalones, #botonTodos, #botonLimpiar{
     padding: 8px;
     justify-content: center;
+    border-radius: 5%;
+    font-family: "Ubuntu", sans-serif;
 }
 
+.nombre-producto {
+    font-family: "Ubuntu", sans-serif;
+}
 
 /*Finalizar Compra*/
 .formulario {
