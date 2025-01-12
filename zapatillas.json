@@ -24,35 +24,35 @@
         "id": 4,
         "nombre": "NIKE AIR FORCE 1 GTX",
         "precio": 38000,
-        "imagen": "https://essential.vtexassets.com/arquivos/ids/417507/306-9775_1.jpg?v=637538501107970000",
+        "imagen": "https://woker.vtexassets.com/arquivos/ids/528467-1200-1200?v=638678733010000000",
         "cantidad": 1
     },
     {
         "id": 5,
         "nombre": "ADIDAS ORIGINALS MD BLACK",
         "precio": 42000,
-        "imagen": "https://essential.vtexassets.com/arquivos/ids/461203/261-2624_1.jpg?v=637650813161900000",
+        "imagen": "https://woker.vtexassets.com/arquivos/ids/546726-1200-1200?v=638717844511400000",
         "cantidad": 1
     },
     {
         "id": 6,
         "nombre": "ADIDAS ORIGINALS MD GREY",
         "precio": 42000,
-        "imagen": "https://essential.vtexassets.com/arquivos/ids/621946/261-3640_1.jpg?v=637988643316430000",
+        "imagen": "https://woker.vtexassets.com/arquivos/ids/545044-1200-1200?v=638714997978200000",
         "cantidad": 1
     },
     {
         "id": 7,
         "nombre": "ADIDAS ORIGINALS MD G-B",
         "precio": 42000,
-        "imagen": "https://essential.vtexassets.com/arquivos/ids/606921/261-3603_1.jpg?v=637963393766070000",
+        "imagen": "https://woker.vtexassets.com/arquivos/ids/541594-1200-1200?v=638701363932570000",
         "cantidad": 1
     },
     {
         "id": 8,
         "nombre": "ADIDAS ORIGINALS MULTIX",
         "precio": 29000,
-        "imagen": "https://essential.vtexassets.com/arquivos/ids/608414/261-3607_1.jpg?v=637964157879430000",
+        "imagen": "https://woker.vtexassets.com/arquivos/ids/534224-1200-1200?v=638683332878500000",
         "cantidad": 1
     }
 ]
