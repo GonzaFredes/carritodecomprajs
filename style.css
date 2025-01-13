@@ -288,7 +288,7 @@ p {
 .botonCarro {
     display: flex;
     align-items: center;
-    margin-left: 1300px;
+    margin-left: 85%;
 }
 
 #boton-carrito {
